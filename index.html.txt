@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comfy Play - Catálogo 2025</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 50%, #e1f5fe 100%);
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(90deg, #9c27b0 0%, #e91e63 50%, #ff9800 100%);
+            color: white;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        .contact-btn {
+            background: white;
+            color: #9c27b0;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .hero {
+            background: linear-gradient(90deg, #9c27b0 0%, #e91e63 50%, #ff9800 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+        }
+
+        .sidebar {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            height: fit-content;
+            position: sticky;
+            top: 120px;
+        }
+
+        .sidebar h3 {
+            color: #9c27b0;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+        }
+
+        .filter-group {
+            margin-bottom: 2rem;
+        }
+
+        .filter-group label {
+            display: block;
+            font-weight: bold;
+            color: #666;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .filter-group select,
+        .filter-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .filter-group select:focus,
+        .filter-group input:focus {
+            outline: none;
+            border-color: #9c27b0;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 3px solid transparent;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+            border-color: #9c27b0;
+        }
+
+        .product-header {
+            padding: 1rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 900;
+        }
+
+        .product-1 { background: linear-gradient(135deg, #ff9800 0%, #f44336 100%); }
+        .product-2 { background: linear-gradient(135deg, #2196f3 0%, #00bcd4 100%); }
+        .product-3 { background: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%); }
+        .product-4 { background: linear-gradient(135deg, #9c27b0 0%, #e91e63 100%); }
+        .product-5 { background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%); }
+
+        .product-info {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .info-box {
+            background: #f5f5f5;
+            padding: 1rem;
+            border-radius: 10px;
+        }
+
+        .info-box strong {
+            color: #9c27b0;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .feature-tag {
+            background: linear-gradient(135deg, #9c27b0 0%, #e91e63 100%);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        .pricing {
+            background: linear-gradient(135deg, #f3e5f5 0%, #fce4ec 100%);
+            padding: 1rem;
+            border-radius: 10px;
+            border: 2px solid #e1bee7;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            align-items: center;
+        }
+
+        .price-value {
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: #9c27b0;
+        }
+
+        .view-pdf-btn {
+            background: linear-gradient(135deg, #9c27b0 0%, #e91e63 100%);
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 1rem;
+            transition: all 0.3s;
+        }
+
+        .view-pdf-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(156, 39, 176, 0.4);
+        }
+
+        .pdf-viewer {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            padding: 2rem;
+            min-height: 800px;
+        }
+
+        .pdf-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .pdf-controls button {
+            background: linear-gradient(135deg, #9c27b0 0%, #e91e63 100%);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .pdf-controls button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(156, 39, 176, 0.4);
+        }
+
+        .pdf-controls button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        #pdfCanvas {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            background: linear-gradient(90deg, #4a148c 0%, #880e4f 50%, #e65100 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        footer h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 900;
+        }
+
+        .footer-contact {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-contact a {
+            background: white;
+            color: #9c27b0;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .footer-contact a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255,255,255,0.3);
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+            font-size: 1.5rem;
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: relative;
+                top: 0;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero {
+                padding: 2rem 1rem;
+            }
+
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+
+            .product-header {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div>
+                <h1>🎈 Comfy Play</h1>
+                <p>Inflatable Party Rentals - Catalogue 2025</p>
+            </div>
+            <a href="tel:604-518-6863" class="contact-btn">📞 604-518-6863</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h2>READY TO MAKE YOUR PARTY UNFORGETTABLE?</h2>
+        <p style="font-size: 1.1rem; max-width: 900px; margin: 0 auto;">
+            Welcome to Comfy Play's vibrant collection of inflatable rentals that make every kid's party unforgettable!
+        </p>
+    </section>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h3>🔍 Filtros</h3>
+            
+            <div class="filter-group">
+                <label>Buscar Produto</label>
+                <input type="text" id="searchInput" placeholder="Digite aqui...">
+            </div>
+
+            <div class="filter-group">
+                <label>Preço</label>
+                <select id="priceFilter">
+                    <option value="all">Todos os Preços</option>
+                    <option value="budget">Econômico ($100)</option>
+                    <option value="standard">Padrão ($120)</option>
+                    <option value="premium">Premium ($130+)</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label>Características</label>
+                <select id="featureFilter">
+                    <option value="all">Todas</option>
+                    <option value="water">Com Água</option>
+                    <option value="climbing">Parede de Escalada</option>
+                    <option value="ball">Jogos com Bola</option>
+                </select>
+            </div>
+
+            <button class="view-pdf-btn" onclick="scrollToPDF()">📄 Ver Catálogo Completo</button>
+        </aside>
+
+        <main>
+            <div id="productsContainer"></div>
+            
+            <div class="pdf-viewer" id="pdfSection">
+                <h2 style="color: #9c27b0; font-size: 2rem; text-align: center; margin-bottom: 2rem; font-weight: 900;">
+                    📖 Catálogo Completo com Fotos
+                </h2>
+                
+                <div class="pdf-controls">
+                    <button id="prevPage">◀ Anterior</button>
+                    <span id="pageInfo" style="font-weight: bold; display: flex; align-items: center;">Página 1</span>
+                    <button id="nextPage">Próxima ▶</button>
+                    <button id="zoomIn">🔍 Zoom +</button>
+                    <button id="zoomOut">🔍 Zoom -</button>
+                </div>
+                
+                <canvas id="pdfCanvas"></canvas>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <h3>Ready to make your party unforgettable?</h3>
+        <p style="font-size: 1.2rem; margin: 1rem 0;">Contact us today to book your inflatable!</p>
+        
+        <div class="footer-contact">
+            <a href="tel:604-518-6863">📞 604-518-6863</a>
+            <a href="mailto:comfyplayrentals@gmail.com">✉️ comfyplayrentals@gmail.com</a>
+            <a href="https://instagram.com/comfyplayrentals" target="_blank">📸 @comfyplayrentals</a>
+        </div>
+        
+        <p style="margin-top: 2rem; opacity: 0.8;">© 2025 Comfy Play - Inflatable Party Rentals. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const products = [
+            {
+                id: 1,
+                name: "Adventure Fortress",
+                page: 2,
+                features: ["Slide", "Climbing Wall", "Obstacles", "Trampoline", "Ball Pit Pool", "Basketball Hoop"],
+                price: 120,
+                threeHours: 65,
+                category: "standard"
+            },
+            {
+                id: 2,
+                name: "Island Adventure",
+                page: 5,
+                features: ["Slide", "Splash Pool", "Climbing Wall", "Water Gun", "Toy Market", "Ball Dart Game", "Basketball Hoop"],
+                price: 130,
+                threeHours: 75,
+                category: "premium"
+            },
+            {
+                id: 3,
+                name: "Tropical Oasis",
+                page: 8,
+                features: ["Slide", "Climbing Wall", "Basketball Hoop", "Splash Pool", "Water Gun", "Obstacle Course"],
+                price: 120,
+                threeHours: 65,
+                category: "standard"
+            },
+            {
+                id: 4,
+                name: "Royal Castle",
+                page: 11,
+                features: ["Slide", "Climbing Wall", "Basketball Hoop", "Ball Pit", "Obstacle Area"],
+                price: 100,
+                threeHours: 50,
+                category: "budget"
+            },
+            {
+                id: 5,
+                name: "Magic Kingdom",
+                page: 14,
+                features: ["Slide", "Climbing Wall", "Basketball Hoop", "Ball Pit", "Obstacle Area", "Ring Toss", "Boxing"],
+                price: 120,
+                threeHours: 65,
+                category: "standard"
+            }
+        ];
+
+        // PDF.js setup
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+        let pdfDoc = null;
+        let pageNum = 1;
+        let pageRendering = false;
+        let pageNumPending = null;
+        let scale = 1.5;
+        const canvas = document.getElementById('pdfCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Load PDF
+        const url = 'Comfy Play Catalogue 2025.pdf';
+        pdfjsLib.getDocument(url).promise.then(pdf => {
+            pdfDoc = pdf;
+            document.getElementById('pageInfo').textContent = `Página ${pageNum} de ${pdf.numPages}`;
+            renderPage(pageNum);
+        });
+
+        function renderPage(num) {
+            pageRendering = true;
+            pdfDoc.getPage(num).then(page => {
+                const viewport = page.getViewport({scale: scale});
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                const renderContext = {
+                    canvasContext: ctx,
+                    viewport: viewport
+                };
+
+                const renderTask = page.render(renderContext);
+                renderTask.promise.then(() => {
+                    pageRendering = false;
+                    if (pageNumPending !== null) {
+                        renderPage(pageNumPending);
+                        pageNumPending = null;
+                    }
+                });
+            });
+
+            document.getElementById('pageInfo').textContent = `Página ${num} de ${pdfDoc.numPages}`;
+        }
+
+        function queueRenderPage(num) {
+            if (pageRendering) {
+                pageNumPending = num;
+            } else {
+                renderPage(num);
+            }
+        }
+
+        function onPrevPage() {
+            if (pageNum <= 1) return;
+            pageNum--;
+            queueRenderPage(pageNum);
+        }
+
+        function onNextPage() {
+            if (pageNum >= pdfDoc.numPages) return;
+            pageNum++;
+            queueRenderPage(pageNum);
+        }
+
+        document.getElementById('prevPage').addEventListener('click', onPrevPage);
+        document.getElementById('nextPage').addEventListener('click', onNextPage);
+
+        document.getElementById('zoomIn').addEventListener('click', () => {
+            scale += 0.25;
+            queueRenderPage(pageNum);
+        });
+
+        document.getElementById('zoomOut').addEventListener('click', () => {
+            if (scale > 0.5) {
+                scale -= 0.25;
+                queueRenderPage(pageNum);
+            }
+        });
+
+        // Filter and display products
+        function displayProducts() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const priceFilter = document.getElementById('priceFilter').value;
+            const featureFilter = document.getElementById('featureFilter').value;
+
+            const filtered = products.filter(p => {
+                const matchSearch = p.name.toLowerCase().includes(searchTerm) || 
+                                   p.features.some(f => f.toLowerCase().includes(searchTerm));
+                
+                const matchPrice = priceFilter === 'all' || p.category === priceFilter;
+                
+                const matchFeature = featureFilter === 'all' ||
+                    (featureFilter === 'water' && p.features.some(f => f.toLowerCase().includes('water') || f.toLowerCase().includes('splash'))) ||
+                    (featureFilter === 'climbing' && p.features.some(f => f.toLowerCase().includes('climbing'))) ||
+                    (featureFilter === 'ball' && p.features.some(f => f.toLowerCase().includes('ball') || f.toLowerCase().includes('basketball')));
+                
+                return matchSearch && matchPrice && matchFeature;
+            });
+
+            const container = document.getElementById('productsContainer');
+            
+            if (filtered.length === 0) {
+                container.innerHTML = '<div class="no-results">😔 Nenhum produto encontrado com esses filtros</div>';
+                return;
+            }
+
+            container.innerHTML = filtered.map(p => `
+                <div class="product-card" onclick="goToPage(${p.page})">
+                    <div class="product-header product-${p.id}">
+                        ${p.name}
+                    </div>
+                    <div class="product-info">
+                        <div class="info-box">
+                            <strong>Características</strong>
+                            <div class="features">
+                                ${p.features.map(f => `<span class="feature-tag">${f}</span>`).join('')}
+                            </div>
+                        </div>
+                        <div class="pricing">
+                            <strong style="color: #9c27b0; font-size: 0.9rem; display: block; margin-bottom: 0.5rem;">PREÇOS</strong>
+                            <div class="price-row">
+                                <span>Dia Completo</span>
+                                <span class="price-value">$${p.price}</span>
+                            </div>
+                            <div class="price-row">
+                                <span>3 Horas</span>
+                                <span class="price-value">$${p.threeHours}</span>
+                            </div>
+                        </div>
+                        <button class="view-pdf-btn">📄 Ver Detalhes no Catálogo</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function goToPage(page) {
+            pageNum = page;
+            queueRenderPage(pageNum);
+            document.getElementById('pdfSection').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToPDF() {
+            document.getElementById('pdfSection').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        document.getElementById('searchInput').addEventListener('input', displayProducts);
+        document.getElementById('priceFilter').addEventListener('change', displayProducts);
+        document.getElementById('featureFilter').addEventListener('change', displayProducts);
+
+        displayProducts();
+    </script>
+</body>
+</html>
