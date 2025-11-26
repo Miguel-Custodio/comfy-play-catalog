@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comfy Play - Catálogo 2025</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <title>Comfy Play - Inflatable Party Rentals Catalogue 2025</title>
     <style>
         * {
             margin: 0;
@@ -13,645 +12,665 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 50%, #e1f5fe 100%);
-            min-height: 100vh;
-        }
-
-        header {
-            background: linear-gradient(90deg, #9c27b0 0%, #e91e63 50%, #ff9800 100%);
-            color: white;
-            padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .header-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 900;
-            letter-spacing: 2px;
-        }
-
-        .contact-btn {
+            font-family: 'Arial Black', Arial, sans-serif;
             background: white;
-            color: #9c27b0;
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        .contact-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
 
         .hero {
-            background: linear-gradient(90deg, #9c27b0 0%, #e91e63 50%, #ff9800 100%);
+            background: linear-gradient(135deg, #FF1493, #FF69B4, #FFA500);
             color: white;
-            padding: 3rem 2rem;
             text-align: center;
+            padding: 60px 20px;
         }
 
-        .hero h2 {
-            font-size: 2.5rem;
+        .hero h1 {
+            font-size: 4rem;
             font-weight: 900;
-            margin-bottom: 1rem;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 2rem;
-        }
-
-        .sidebar {
-            background: white;
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            height: fit-content;
-            position: sticky;
-            top: 120px;
-        }
-
-        .sidebar h3 {
-            color: #9c27b0;
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            font-weight: 900;
-        }
-
-        .filter-group {
-            margin-bottom: 2rem;
-        }
-
-        .filter-group label {
-            display: block;
-            font-weight: bold;
-            color: #666;
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
+            margin-bottom: 10px;
             text-transform: uppercase;
         }
 
-        .filter-group select,
-        .filter-group input {
-            width: 100%;
-            padding: 0.8rem;
-            border: 2px solid #e0e0e0;
-            border-radius: 10px;
-            font-size: 1rem;
-            transition: all 0.3s;
+        .hero .tagline {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
         }
 
-        .filter-group select:focus,
-        .filter-group input:focus {
-            outline: none;
-            border-color: #9c27b0;
+        .hero .year {
+            font-size: 2rem;
+            font-weight: 900;
         }
 
-        .product-card {
+        .intro {
             background: white;
-            border-radius: 20px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            cursor: pointer;
-            transition: all 0.3s;
-            border: 3px solid transparent;
+            padding: 50px 20px;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
-            border-color: #9c27b0;
+        .intro h2 {
+            font-size: 2.5rem;
+            color: #FF1493;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .intro p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+
+        .product {
+            background: white;
+            margin: 40px auto;
+            max-width: 1000px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
         }
 
         .product-header {
-            padding: 1rem;
-            border-radius: 15px;
-            text-align: center;
-            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #FF1493, #FF69B4);
             color: white;
-            font-size: 1.8rem;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .product-header h3 {
+            font-size: 3rem;
             font-weight: 900;
-        }
-
-        .product-1 { background: linear-gradient(135deg, #ff9800 0%, #f44336 100%); }
-        .product-2 { background: linear-gradient(135deg, #2196f3 0%, #00bcd4 100%); }
-        .product-3 { background: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%); }
-        .product-4 { background: linear-gradient(135deg, #9c27b0 0%, #e91e63 100%); }
-        .product-5 { background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%); }
-
-        .product-info {
-            display: grid;
-            gap: 1rem;
-        }
-
-        .info-box {
-            background: #f5f5f5;
-            padding: 1rem;
-            border-radius: 10px;
-        }
-
-        .info-box strong {
-            color: #9c27b0;
-            display: block;
-            margin-bottom: 0.5rem;
-            font-size: 0.85rem;
             text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .product-content {
+            padding: 40px;
+        }
+
+        .info-row {
+            margin-bottom: 30px;
+            border-bottom: 2px solid #FFE4E1;
+            padding-bottom: 20px;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-row h4 {
+            color: #FF1493;
+            font-size: 0.9rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .info-row p {
+            color: #555;
+            font-size: 1rem;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
         }
 
         .features {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
+            gap: 10px;
         }
 
-        .feature-tag {
-            background: linear-gradient(135deg, #9c27b0 0%, #e91e63 100%);
-            color: white;
-            padding: 0.4rem 0.8rem;
+        .feature-item {
+            background: #FFE4E1;
+            color: #FF1493;
+            padding: 8px 16px;
             border-radius: 20px;
-            font-size: 0.75rem;
+            font-size: 0.9rem;
             font-weight: bold;
+            font-family: Arial, sans-serif;
         }
 
         .pricing {
-            background: linear-gradient(135deg, #f3e5f5 0%, #fce4ec 100%);
-            padding: 1rem;
-            border-radius: 10px;
-            border: 2px solid #e1bee7;
+            background: linear-gradient(135deg, #FFF0F5, #FFE4E1);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+            border: 3px solid #FF69B4;
         }
 
-        .price-row {
+        .pricing h4 {
+            color: #FF1493;
+            font-size: 1.2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .pricing-table {
+            margin-bottom: 20px;
+        }
+
+        .price-line {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 0.5rem;
-            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #FFB6C1;
         }
 
-        .price-value {
-            font-size: 1.3rem;
-            font-weight: 900;
-            color: #9c27b0;
+        .price-line:last-child {
+            border-bottom: none;
         }
 
-        .view-pdf-btn {
-            background: linear-gradient(135deg, #9c27b0 0%, #e91e63 100%);
-            color: white;
-            padding: 1rem;
-            border: none;
-            border-radius: 10px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 1rem;
-            transition: all 0.3s;
-        }
-
-        .view-pdf-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(156, 39, 176, 0.4);
-        }
-
-        .pdf-viewer {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            padding: 2rem;
-            min-height: 800px;
-        }
-
-        .pdf-controls {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .pdf-controls button {
-            background: linear-gradient(135deg, #9c27b0 0%, #e91e63 100%);
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border: none;
-            border-radius: 10px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .pdf-controls button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(156, 39, 176, 0.4);
-        }
-
-        .pdf-controls button:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        #pdfCanvas {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-
-        footer {
-            background: linear-gradient(90deg, #4a148c 0%, #880e4f 50%, #e65100 100%);
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
-            margin-top: 4rem;
-        }
-
-        footer h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            font-weight: 900;
-        }
-
-        .footer-contact {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-contact a {
-            background: white;
-            color: #9c27b0;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s;
-        }
-
-        .footer-contact a:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255,255,255,0.3);
-        }
-
-        .no-results {
-            text-align: center;
-            padding: 3rem;
+        .price-line span:first-child {
+            font-family: Arial, sans-serif;
             color: #666;
+            font-weight: bold;
+        }
+
+        .price-line span:last-child {
+            color: #FF1493;
+            font-weight: 900;
             font-size: 1.5rem;
         }
 
-        @media (max-width: 1024px) {
-            .container {
-                grid-template-columns: 1fr;
-            }
+        .setup-section {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 3px solid #FF69B4;
+        }
 
-            .sidebar {
-                position: relative;
-                top: 0;
-            }
+        .setup-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
 
-            h1 {
-                font-size: 2rem;
-            }
+        .setup-line {
+            display: flex;
+            justify-content: space-between;
+            font-family: Arial, sans-serif;
+        }
 
-            .hero h2 {
-                font-size: 1.8rem;
-            }
+        .setup-line span:first-child {
+            color: #666;
+            font-weight: bold;
+        }
+
+        .setup-line span:last-child {
+            color: #333;
+            font-weight: 900;
+        }
+
+        .note {
+            font-size: 0.85rem;
+            color: #999;
+            font-style: italic;
+            margin-top: 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #8B008B, #FF1493);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .footer h3 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .footer p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .contact-box {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .contact-line {
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .contact-line a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-line a:hover {
+            text-decoration: underline;
         }
 
         @media (max-width: 768px) {
-            header {
-                padding: 1rem;
+            .hero h1 {
+                font-size: 2.5rem;
             }
 
-            h1 {
-                font-size: 1.5rem;
+            .product-header h3 {
+                font-size: 2rem;
             }
 
-            .hero {
-                padding: 2rem 1rem;
+            .setup-grid {
+                grid-template-columns: 1fr;
             }
 
-            .hero h2 {
-                font-size: 1.5rem;
-            }
-
-            .product-header {
-                font-size: 1.3rem;
+            .intro h2 {
+                font-size: 1.8rem;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <div>
-                <h1>🎈 Comfy Play</h1>
-                <p>Inflatable Party Rentals - Catalogue 2025</p>
-            </div>
-            <a href="tel:604-518-6863" class="contact-btn">📞 604-518-6863</a>
-        </div>
-    </header>
 
-    <section class="hero">
-        <h2>READY TO MAKE YOUR PARTY UNFORGETTABLE?</h2>
-        <p style="font-size: 1.1rem; max-width: 900px; margin: 0 auto;">
-            Welcome to Comfy Play's vibrant collection of inflatable rentals that make every kid's party unforgettable!
-        </p>
-    </section>
-
-    <div class="container">
-        <aside class="sidebar">
-            <h3>🔍 Filtros</h3>
-            
-            <div class="filter-group">
-                <label>Buscar Produto</label>
-                <input type="text" id="searchInput" placeholder="Digite aqui...">
-            </div>
-
-            <div class="filter-group">
-                <label>Preço</label>
-                <select id="priceFilter">
-                    <option value="all">Todos os Preços</option>
-                    <option value="budget">Econômico ($100)</option>
-                    <option value="standard">Padrão ($120)</option>
-                    <option value="premium">Premium ($130+)</option>
-                </select>
-            </div>
-
-            <div class="filter-group">
-                <label>Características</label>
-                <select id="featureFilter">
-                    <option value="all">Todas</option>
-                    <option value="water">Com Água</option>
-                    <option value="climbing">Parede de Escalada</option>
-                    <option value="ball">Jogos com Bola</option>
-                </select>
-            </div>
-
-            <button class="view-pdf-btn" onclick="scrollToPDF()">📄 Ver Catálogo Completo</button>
-        </aside>
-
-        <main>
-            <div id="productsContainer"></div>
-            
-            <div class="pdf-viewer" id="pdfSection">
-                <h2 style="color: #9c27b0; font-size: 2rem; text-align: center; margin-bottom: 2rem; font-weight: 900;">
-                    📖 Catálogo Completo com Fotos
-                </h2>
-                
-                <div class="pdf-controls">
-                    <button id="prevPage">◀ Anterior</button>
-                    <span id="pageInfo" style="font-weight: bold; display: flex; align-items: center;">Página 1</span>
-                    <button id="nextPage">Próxima ▶</button>
-                    <button id="zoomIn">🔍 Zoom +</button>
-                    <button id="zoomOut">🔍 Zoom -</button>
-                </div>
-                
-                <canvas id="pdfCanvas"></canvas>
-            </div>
-        </main>
+    <div class="hero">
+        <h1>Comfy Play</h1>
+        <div class="tagline">Inflatable Party Rentals</div>
+        <div class="year">CATALOGUE 2025</div>
     </div>
 
-    <footer>
-        <h3>Ready to make your party unforgettable?</h3>
-        <p style="font-size: 1.2rem; margin: 1rem 0;">Contact us today to book your inflatable!</p>
-        
-        <div class="footer-contact">
-            <a href="tel:604-518-6863">📞 604-518-6863</a>
-            <a href="mailto:comfyplayrentals@gmail.com">✉️ comfyplayrentals@gmail.com</a>
-            <a href="https://instagram.com/comfyplayrentals" target="_blank">📸 @comfyplayrentals</a>
+    <div class="intro">
+        <h2>Ready to make your party unforgettable?</h2>
+        <p>Welcome to Comfy Play vibrant collection of inflatable rentals that make every kid's party unforgettable! With five exciting models to choose from—Magic Kingdom, Royal Castle, Tropical Oasis, Adventure Fortress, and Island of Adventure—there's something to spark every child's imagination. From colourful bounce houses and thrilling slides to fun obstacle courses and themed castles, our inflatables bring energy, excitement, and safe entertainment to any celebration. Whether you're planning a birthday, school event, or community gathering, our high-quality, sanitized, and easy-to-set-up inflatables are the perfect addition to keep the little ones smiling all day long. Dive into our catalogue and find the perfect inflatable to elevate your next party!</p>
+    </div>
+
+    <div class="product">
+        <div class="product-header">
+            <h3>Adventure Fortress</h3>
         </div>
-        
-        <p style="margin-top: 2rem; opacity: 0.8;">© 2025 Comfy Play - Inflatable Party Rentals. All rights reserved.</p>
-    </footer>
+        <div class="product-content">
+            <div class="info-row">
+                <h4>Dimensions</h4>
+                <p>13.5 ft (L) x 11.2 ft (W) x 7.2 ft (H)</p>
+            </div>
+            <div class="info-row">
+                <h4>Features</h4>
+                <div class="features">
+                    <span class="feature-item">Slide</span>
+                    <span class="feature-item">Climbing Wall</span>
+                    <span class="feature-item">Obstacles</span>
+                    <span class="feature-item">Trampoline</span>
+                    <span class="feature-item">Ball Pit Pool</span>
+                    <span class="feature-item">Basketball Hoop</span>
+                    <span class="feature-item">Ball Shooting</span>
+                    <span class="feature-item">Obstacles Poles</span>
+                </div>
+            </div>
+            <div class="info-row">
+                <h4>Recommended Age</h4>
+                <p>3–10 years</p>
+            </div>
+            <div class="info-row">
+                <h4>Maximum Capacity</h4>
+                <p>3–4 children (up to 300 lbs total)</p>
+            </div>
 
-    <script>
-        const products = [
-            {
-                id: 1,
-                name: "Adventure Fortress",
-                page: 2,
-                features: ["Slide", "Climbing Wall", "Obstacles", "Trampoline", "Ball Pit Pool", "Basketball Hoop"],
-                price: 120,
-                threeHours: 65,
-                category: "standard"
-            },
-            {
-                id: 2,
-                name: "Island Adventure",
-                page: 5,
-                features: ["Slide", "Splash Pool", "Climbing Wall", "Water Gun", "Toy Market", "Ball Dart Game", "Basketball Hoop"],
-                price: 130,
-                threeHours: 75,
-                category: "premium"
-            },
-            {
-                id: 3,
-                name: "Tropical Oasis",
-                page: 8,
-                features: ["Slide", "Climbing Wall", "Basketball Hoop", "Splash Pool", "Water Gun", "Obstacle Course"],
-                price: 120,
-                threeHours: 65,
-                category: "standard"
-            },
-            {
-                id: 4,
-                name: "Royal Castle",
-                page: 11,
-                features: ["Slide", "Climbing Wall", "Basketball Hoop", "Ball Pit", "Obstacle Area"],
-                price: 100,
-                threeHours: 50,
-                category: "budget"
-            },
-            {
-                id: 5,
-                name: "Magic Kingdom",
-                page: 14,
-                features: ["Slide", "Climbing Wall", "Basketball Hoop", "Ball Pit", "Obstacle Area", "Ring Toss", "Boxing"],
-                price: 120,
-                threeHours: 65,
-                category: "standard"
-            }
-        ];
-
-        // PDF.js setup
-        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-
-        let pdfDoc = null;
-        let pageNum = 1;
-        let pageRendering = false;
-        let pageNumPending = null;
-        let scale = 1.5;
-        const canvas = document.getElementById('pdfCanvas');
-        const ctx = canvas.getContext('2d');
-
-        // Load PDF
-        const url = 'Comfy Play Catalogue 2025.pdf';
-        pdfjsLib.getDocument(url).promise.then(pdf => {
-            pdfDoc = pdf;
-            document.getElementById('pageInfo').textContent = `Página ${pageNum} de ${pdf.numPages}`;
-            renderPage(pageNum);
-        });
-
-        function renderPage(num) {
-            pageRendering = true;
-            pdfDoc.getPage(num).then(page => {
-                const viewport = page.getViewport({scale: scale});
-                canvas.height = viewport.height;
-                canvas.width = viewport.width;
-
-                const renderContext = {
-                    canvasContext: ctx,
-                    viewport: viewport
-                };
-
-                const renderTask = page.render(renderContext);
-                renderTask.promise.then(() => {
-                    pageRendering = false;
-                    if (pageNumPending !== null) {
-                        renderPage(pageNumPending);
-                        pageNumPending = null;
-                    }
-                });
-            });
-
-            document.getElementById('pageInfo').textContent = `Página ${num} de ${pdfDoc.numPages}`;
-        }
-
-        function queueRenderPage(num) {
-            if (pageRendering) {
-                pageNumPending = num;
-            } else {
-                renderPage(num);
-            }
-        }
-
-        function onPrevPage() {
-            if (pageNum <= 1) return;
-            pageNum--;
-            queueRenderPage(pageNum);
-        }
-
-        function onNextPage() {
-            if (pageNum >= pdfDoc.numPages) return;
-            pageNum++;
-            queueRenderPage(pageNum);
-        }
-
-        document.getElementById('prevPage').addEventListener('click', onPrevPage);
-        document.getElementById('nextPage').addEventListener('click', onNextPage);
-
-        document.getElementById('zoomIn').addEventListener('click', () => {
-            scale += 0.25;
-            queueRenderPage(pageNum);
-        });
-
-        document.getElementById('zoomOut').addEventListener('click', () => {
-            if (scale > 0.5) {
-                scale -= 0.25;
-                queueRenderPage(pageNum);
-            }
-        });
-
-        // Filter and display products
-        function displayProducts() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            const priceFilter = document.getElementById('priceFilter').value;
-            const featureFilter = document.getElementById('featureFilter').value;
-
-            const filtered = products.filter(p => {
-                const matchSearch = p.name.toLowerCase().includes(searchTerm) || 
-                                   p.features.some(f => f.toLowerCase().includes(searchTerm));
-                
-                const matchPrice = priceFilter === 'all' || p.category === priceFilter;
-                
-                const matchFeature = featureFilter === 'all' ||
-                    (featureFilter === 'water' && p.features.some(f => f.toLowerCase().includes('water') || f.toLowerCase().includes('splash'))) ||
-                    (featureFilter === 'climbing' && p.features.some(f => f.toLowerCase().includes('climbing'))) ||
-                    (featureFilter === 'ball' && p.features.some(f => f.toLowerCase().includes('ball') || f.toLowerCase().includes('basketball')));
-                
-                return matchSearch && matchPrice && matchFeature;
-            });
-
-            const container = document.getElementById('productsContainer');
-            
-            if (filtered.length === 0) {
-                container.innerHTML = '<div class="no-results">😔 Nenhum produto encontrado com esses filtros</div>';
-                return;
-            }
-
-            container.innerHTML = filtered.map(p => `
-                <div class="product-card" onclick="goToPage(${p.page})">
-                    <div class="product-header product-${p.id}">
-                        ${p.name}
+            <div class="pricing">
+                <h4>Rentals</h4>
+                <div class="pricing-table">
+                    <div class="price-line">
+                        <span>Whole day</span>
+                        <span>$120</span>
                     </div>
-                    <div class="product-info">
-                        <div class="info-box">
-                            <strong>Características</strong>
-                            <div class="features">
-                                ${p.features.map(f => `<span class="feature-tag">${f}</span>`).join('')}
-                            </div>
-                        </div>
-                        <div class="pricing">
-                            <strong style="color: #9c27b0; font-size: 0.9rem; display: block; margin-bottom: 0.5rem;">PREÇOS</strong>
-                            <div class="price-row">
-                                <span>Dia Completo</span>
-                                <span class="price-value">$${p.price}</span>
-                            </div>
-                            <div class="price-row">
-                                <span>3 Horas</span>
-                                <span class="price-value">$${p.threeHours}</span>
-                            </div>
-                        </div>
-                        <button class="view-pdf-btn">📄 Ver Detalhes no Catálogo</button>
+                    <div class="price-line">
+                        <span>3h rental</span>
+                        <span>$65</span>
+                    </div>
+                    <div class="price-line">
+                        <span>Each additional hour</span>
+                        <span>$10</span>
                     </div>
                 </div>
-            `).join('');
-        }
 
-        function goToPage(page) {
-            pageNum = page;
-            queueRenderPage(pageNum);
-            document.getElementById('pdfSection').scrollIntoView({ behavior: 'smooth' });
-        }
+                <div class="setup-section">
+                    <h4>Set Up</h4>
+                    <div class="setup-grid">
+                        <div class="setup-line">
+                            <span>Indoor set up</span>
+                            <span>$20</span>
+                        </div>
+                        <div class="setup-line">
+                            <span>Outdoor set up</span>
+                            <span>$30</span>
+                        </div>
+                        <div class="setup-line">
+                            <span>Water set up</span>
+                            <span>$50</span>
+                        </div>
+                        <div class="setup-line">
+                            <span>Self set up kit</span>
+                            <span>$25</span>
+                        </div>
+                    </div>
+                    <p class="note">Delivery cost not included. Calculated according to the distance from 15738 85th Ave, Surrey.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        function scrollToPDF() {
-            document.getElementById('pdfSection').scrollIntoView({ behavior: 'smooth' });
-        }
+    <div class="product">
+        <div class="product-header">
+            <h3>Island Adventure</h3>
+        </div>
+        <div class="product-content">
+            <div class="info-row">
+                <h4>Dimensions</h4>
+                <p>14.1 ft (L) x 11.8 ft (W) x 7.2 ft (H)</p>
+            </div>
+            <div class="info-row">
+                <h4>Features</h4>
+                <div class="features">
+                    <span class="feature-item">10-in-1 Design</span>
+                    <span class="feature-item">Long Safe-Slope Slide</span>
+                    <span class="feature-item">Climbing Wall</span>
+                    <span class="feature-item">Bouncer</span>
+                    <span class="feature-item">Play House Sunshade Stand</span>
+                    <span class="feature-item">Huge Splash Pool</span>
+                    <span class="feature-item">Funny Photography Tunnel</span>
+                    <span class="feature-item">Dart Game</span>
+                    <span class="feature-item">Water Cannon</span>
+                    <span class="feature-item">Basketball Hoop</span>
+                </div>
+            </div>
+            <div class="info-row">
+                <h4>Recommended Age</h4>
+                <p>3–10 years</p>
+            </div>
+            <div class="info-row">
+                <h4>Maximum Capacity</h4>
+                <p>3 children (up to 297 lbs total)</p>
+            </div>
 
-        document.getElementById('searchInput').addEventListener('input', displayProducts);
-        document.getElementById('priceFilter').addEventListener('change', displayProducts);
-        document.getElementById('featureFilter').addEventListener('change', displayProducts);
+            <div class="pricing">
+                <h4>Rentals</h4>
+                <div class="pricing-table">
+                    <div class="price-line">
+                        <span>Whole day</span>
+                        <span>$130</span>
+                    </div>
+                    <div class="price-line">
+                        <span>3h rental</span>
+                        <span>$75</span>
+                    </div>
+                    <div class="price-line">
+                        <span>Each additional hour</span>
+                        <span>$10</span>
+                    </div>
+                </div>
 
-        displayProducts();
-    </script>
+                <div class="setup-section">
+                    <h4>Set Up</h4>
+                    <div class="setup-grid">
+                        <div class="setup-line">
+                            <span>Indoor set up</span>
+                            <span>$25</span>
+                        </div>
+                        <div class="setup-line">
+                            <span>Outdoor set up</span>
+                            <span>$35</span>
+                        </div>
+                        <div class="setup-line">
+                            <span>Water set up</span>
+                            <span>$60</span>
+                        </div>
+                        <div class="setup-line">
+                            <span>Self set up kit</span>
+                            <span>$25</span>
+                        </div>
+                    </div>
+                    <p class="note">Delivery cost not included. Calculated according to the distance from 15738 85th Ave, Surrey.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product">
+        <div class="product-header">
+            <h3>Tropical Oasis</h3>
+        </div>
+        <div class="product-content">
+            <div class="info-row">
+                <h4>Dimensions</h4>
+                <p>13.1 ft (L) x 10.5 ft (W) x 7.2 ft (H)</p>
+            </div>
+            <div class="info-row">
+                <h4>Features</h4>
+                <div class="features">
+                    <span class="feature-item">Climbing Wall</span>
+                    <span class="feature-item">Basketball Shooting</span>
+                    <span class="feature-item">Surprise Water Bucket</span>
+                    <span class="feature-item">Large Bouncing Area</span>
+                    <span class="feature-item">Obstacle Course</span>
+                    <span class="feature-item">Water Pool</span>
+                    <span class="feature-item">Water Cannon</span>
+                    <span class="feature-item">Long Slide</span>
+                </div>
+            </div>
+            <div class="info-row">
+                <h4>Recommended Age</h4>
+                <p>3–10 years</p>
+            </div>
+            <div class="info-row">
+                <h4>Maximum Capacity</h4>
+                <p>3 children (up to 297 lbs total)</p>
+            </div>
+
+            <div class="pricing">
+                <h4>Rentals</h4>
+                <div class="pricing-table">
+                    <div class="price-line">
+                        <span>Whole day</span>
+                        <span>$120</span>
+                    </div>
+                    <div class="price-line">
+                        <span>3h rental</span>
+                        <span>$65</span>
+                    </div>
+                    <div class="price-line">
+                        <span>Each additional hour</span>
+                        <span>$10</span>
+                    </div>
+                </div>
+
+                <div class="setup-section">
+                    <h4>Set Up</h4>
+                    <div class="setup-grid">
+                        <div class="setup-line">
+                            <span>Indoor set up</span>
+                            <span>$20</span>
+                        </div>
+                        <div class="setup-line">
+                            <span>Outdoor set up</span>
+                            <span>$30</span>
+                        </div>
+                        <div class="setup-line">
+                            <span>Water set up</span>
+                            <span>$50</span>
+                        </div>
+                        <div class="setup-line">
+                            <span>Self set up kit</span>
+                            <span>$25</span>
+                        </div>
+                    </div>
+                    <p class="note">Delivery cost not included. Calculated according to the distance from 15738 85th Ave, Surrey.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product">
+        <div class="product-header">
+            <h3>Royal Castle</h3>
+        </div>
+        <div class="product-content">
+            <div class="info-row">
+                <h4>Dimensions</h4>
+                <p>12.5 ft (L) x 10.5 ft (W) x 8.2 ft (H)</p>
+            </div>
+            <div class="info-row">
+                <h4>Features</h4>
+                <div class="features">
+                    <span class="feature-item">Slide</span>
+                    <span class="feature-item">Climbing Wall</span>
+                    <span class="feature-item">Basketball Hoop</span>
+                    <span class="feature-item">Ball Pit</span>
+                    <span class="feature-item">Obstacle Area</span>
+                </div>
+            </div>
+            <div class="info-row">
+                <h4>Recommended Age</h4>
+                <p>3–10 years</p>
+            </div>
+            <div class="info-row">
+                <h4>Maximum Capacity</h4>
+                <p>3 children (up to 297 lbs total)</p>
+            </div>
+
+            <div class="pricing">
+                <h4>Rentals</h4>
+                <div class="pricing-table">
+                    <div class="price-line">
+                        <span>Whole day</span>
+                        <span>$100</span>
+                    </div>
+                    <div class="price-line">
+                        <span>3h rental</span>
+                        <span>$50</span>
+                    </div>
+                    <div class="price-line">
+                        <span>Each additional hour</span>
+                        <span>$10</span>
+                    </div>
+                </div>
+
+                <div class="setup-section">
+                    <h4>Set Up</h4>
+                    <div class="setup-grid">
+                        <div class="setup-line">
+                            <span>Indoor set up</span>
+                            <span>$20</span>
+                        </div>
+                        <div class="setup-line">
+                            <span>Outdoor set up</span>
+                            <span>$30</span>
+                        </div>
+                        <div class="setup-line">
+                            <span>Water set up</span>
+                            <span>$50</span>
+                        </div>
+                        <div class="setup-line">
+                            <span>Self set up kit</span>
+                            <span>$25</span>
+                        </div>
+                    </div>
+                    <p class="note">Delivery cost not included. Calculated according to the distance from 15738 85th Ave, Surrey.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product">
+        <div class="product-header">
+            <h3>Magic Kingdom</h3>
+        </div>
+        <div class="product-content">
+            <div class="info-row">
+                <h4>Dimensions</h4>
+                <p>13.1 ft (L) x 10.5 ft (W) x 7.2 ft (H)</p>
+            </div>
+            <div class="info-row">
+                <h4>Features</h4>
+                <div class="features">
+                    <span class="feature-item">9-in-1 Design</span>
+                    <span class="feature-item">Bent Slide</span>
+                    <span class="feature-item">Bounce Area</span>
+                    <span class="feature-item">Ring Toss</span>
+                    <span class="feature-item">Boxing</span>
+                    <span class="feature-item">Basketball Hoop</span>
+                    <span class="feature-item">Ball Toss</span>
+                    <span class="feature-item">Climbing Wall</span>
+                    <span class="feature-item">Ball Pit</span>
+                </div>
+            </div>
+            <div class="info-row">
+                <h4>Recommended Age</h4>
+                <p>3–12 years</p>
+            </div>
+            <div class="info-row">
+                <h4>Maximum Capacity</h4>
+                <p>3 children (up to 297 lbs total)</p>
+            </div>
+
+            <div class="pricing">
+                <h4>Rentals</h4>
+                <div class="pricing-table">
+                    <div class="price-line">
+                        <span>Whole day</span>
+                        <span>$120</span>
+                    </div>
+                    <div class="price-line">
+                        <span>3h rental</span>
+                        <span>$65</span>
+                    </div>
+                    <div class="price-line">
+                        <span>Each additional hour</span>
+                        <span>$10</span>
+                    </div>
+                </div>
+
+                <div class="setup-section">
+                    <h4>Set Up</h4>
+                    <div class="setup-grid">
+                        <div class="setup-line">
+                            <span>Indoor set up</span>
+                            <span>$20</span>
+                        </div>
+                        <div class="setup-line">
+                            <span>Outdoor set up</span>
+                            <span>$30</span>
+                        </div>
+                        <div class="setup-line">
+                            <span>Water set up</span>
+                            <span>$50</span>
+                        </div>
+                        <div class="setup-line">
+                            <span>Self set up kit</span>
+                            <span>$25</span>
+                        </div>
+                    </div>
+                    <p class="note">Delivery cost not included. Calculated according to the distance from 15738 85th Ave, Surrey.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h3>Ready to make your party unforgettable?</h3>
+        <p>Contact us today to book your inflatable.</p>
+        
+        <div class="contact-box">
+            <div class="contact-line">📞 <a href="tel:604-518-6863">604-518-6863</a></div>
+            <div class="contact-line">✉️ <a href="mailto:comfyplayrentals@gmail.com">comfyplayrentals@gmail.com</a></div>
+            <div class="contact-line">📸 <a href="https://instagram.com/comfyplayrentals" target="_blank">@comfyplayrentals</a></div>
+        </div>
+
+        <p style="opacity: 0.8; margin-top: 30px;">© 2025 Comfy Play - Inflatable Party Rentals. All rights reserved.</p>
+    </div>
+
 </body>
 </html>
