@@ -364,6 +364,7 @@
 
     <!-- Navigation Bar -->
     <nav class="navbar">
+        <button class="nav-btn" onclick="goHome()">🏠 Home</button>
         <button class="nav-btn active" onclick="selectProduct(0)">Adventure Fortress</button>
         <button class="nav-btn" onclick="selectProduct(1)">Island Adventure</button>
         <button class="nav-btn" onclick="selectProduct(2)">Tropical Oasis</button>
@@ -485,10 +486,11 @@
         const url = 'Comfy Play Catalogue 2025.pdf';
         pdfjsLib.getDocument(url).promise.then(pdf => {
             pdfDoc = pdf;
-            renderPage(products[currentProduct].page);
+            renderPage(1);
         });
 
         function renderPage(num) {
+            if (!pdfDoc) return;
             pageNum = num;
             pdfDoc.getPage(num).then(page => {
                 const viewport = page.getViewport({scale: scale});
@@ -499,13 +501,29 @@
             document.getElementById('pageInfo').textContent = 'Page ' + num + ' of ' + pdfDoc.numPages;
         }
 
+        function goHome() {
+            renderPage(1);
+            document.getElementById('productInfo').innerHTML = 
+                '<div class="product-title">Welcome to Comfy Play!</div>' +
+                '<div style="text-align: center; padding: 40px; font-size: 1.2rem; line-height: 1.8; color: #555;">' +
+                '<p>Select a product from the navigation bar above to view details and pricing.</p>' +
+                '<p style="margin-top: 20px;">With five exciting models to choose from, there\'s something to spark every child\'s imagination!</p>' +
+                '</div>';
+            
+            document.querySelectorAll('.nav-btn').forEach((btn, i) => {
+                btn.classList.toggle('active', i === 0);
+            });
+        }
+
         function selectProduct(index) {
             currentProduct = index;
             renderPage(products[index].page);
             updateProductInfo();
+
+        goHome();
             
             document.querySelectorAll('.nav-btn').forEach((btn, i) => {
-                btn.classList.toggle('active', i === index);
+                btn.classList.toggle('active', i === index + 1);
             });
         }
 
